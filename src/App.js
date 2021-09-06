@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import Pedalboard from './components/Pedalboard';
+import Pedalbody from './components/Pedalbody';
+import Knob from './components/Knob';
+import Switch from './components/Switch';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pedalboard />
+      <Pedalbody />
+      <Knob />
+      <Switch />
     </div>
   );
 }

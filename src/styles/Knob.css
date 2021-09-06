@@ -1,0 +1,7 @@
+.Knob {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: none;
+    background-color: green;
+}
