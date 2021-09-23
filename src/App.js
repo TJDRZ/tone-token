@@ -8,7 +8,6 @@ function App() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    // localStorage.clear();
     if (localStorage.cards) {
       setCards(JSON.parse(localStorage.getItem("cards")));
     }
@@ -28,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={addNewPedalboard}>Add New Pedalboard</button>
+      <button onClick={() => localStorage.clear()}>Clear localStorage</button>
       <ul className="card-container">
         {cards.map(card => {
           return (

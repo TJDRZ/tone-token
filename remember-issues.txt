@@ -1,3 +1,5 @@
 - On the App component, the list of "cards / pedalboards"...the name doesnt save. You probably need to raise the state of the name from the input, up through the card, up to the App component in order to save it in localstorage. may need to make objects inside the cards with {id: uniqid(), name:props.name}
+^^^^^
+and on top of that make a conditional render in the App component for if the card input name text exists, render it
 
 -The pedals that are saved to localstorage in the pedalboard component's state is carrying over through different pedalboards, thus if you have 2 pedalboards and create/save a pedal in one, it will exist in the second pedalboard. Not right, havent figured it out yet
