@@ -11,7 +11,6 @@ function App() {
     // localStorage.clear();
     if (localStorage.cards) {
       setCards(JSON.parse(localStorage.getItem("cards")));
-      setTimeout(1000, console.log(cards));
     }
   }, []);
 
@@ -21,7 +20,7 @@ function App() {
 
   const addNewPedalboard = () => {
     const id = uniqid();
-    setCards(cards.concat(id))
+    setCards(cards.concat(id));
   };
 
   const deletePedalboard = id => setCards(cards.filter(card => card !== id));
@@ -33,9 +32,9 @@ function App() {
         {cards.map(card => {
           return (
             <li key={card}>
-              <Card id={card} />
+              <Card />
               <Link to={`/pedalboard/${card}`}>
-                <button>Open Pedalboard</button>
+                <button currentBoard={card}>Open Pedalboard</button>
               </Link>
               <button onClick={() => deletePedalboard(card)}>Delete</button>
             </li>
