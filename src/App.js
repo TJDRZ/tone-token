@@ -1,5 +1,5 @@
 import './styles/App.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import uniqid from 'uniqid';
 import Card from './components/Card';
@@ -7,14 +7,24 @@ import Card from './components/Card';
 function App() {
   const [cards, setCards] = useState([]);
 
+  useEffect(() => {
+    // localStorage.clear();
+    if (localStorage.cards) {
+      setCards(JSON.parse(localStorage.getItem("cards")));
+      setTimeout(1000, console.log(cards));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cards", JSON.stringify(cards));
+  }, [cards]);
+
   const addNewPedalboard = () => {
     const id = uniqid();
     setCards(cards.concat(id))
   };
 
-  const deletePedalboard = key => {
-    setCards(cards.filter(card => card !== key));
-  };
+  const deletePedalboard = id => setCards(cards.filter(card => card !== id));
 
   return (
     <div className="App">
@@ -22,12 +32,13 @@ function App() {
       <ul className="card-container">
         {cards.map(card => {
           return (
-            <Link to={"/pedalboard-" + card} key={card}>
-              <li>
-                <Card id={card} />
-                <button onClick={() => deletePedalboard(card)}>Delete</button>
-              </li>
-            </Link>
+            <li key={card}>
+              <Card id={card} />
+              <Link to={`/pedalboard/${card}`}>
+                <button>Open Pedalboard</button>
+              </Link>
+              <button onClick={() => deletePedalboard(card)}>Delete</button>
+            </li>
           )
         })}
       </ul>

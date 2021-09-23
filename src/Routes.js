@@ -6,8 +6,12 @@ function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/tone-token" component={App} />
-        <Route path="/pedalboard" component={Pedalboard} />
+        <Route exact path="/tone-token">
+          <App />
+        </Route>
+        <Route path="/pedalboard">
+          <Pedalboard />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
