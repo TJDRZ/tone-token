@@ -1,6 +1,6 @@
 .Pedalboard {
-    width: 50vw;
-    height: 50vh;
+    width: 20rem;
+    height: 20rem;
     border: solid black 3px;
     background-color: red;
 }

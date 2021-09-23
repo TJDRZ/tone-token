@@ -1,19 +1,20 @@
-import '../styles/Switch.css';
-import uniqid from 'uniqid';
-import { useState } from "react";
+// import '../styles/Switch.css';
+// import uniqid from 'uniqid';
+// import { useState } from "react";
 
-function Switch() {
-  const [position, setPosition] = useState('mid');
+// function Switch() {
+//   const [position, setPosition] = useState('mid');
 
-  const dragStart = e => {
-    e.dataTransfer.setData('switch', e.target.id);
-  };
+//   const dragStart = e => {
+//     e.dataTransfer.effectAllowed = 'move';
+//     e.dataTransfer.setData('switch', e.target.id);
+//   };
 
-  return (
-    <div className="Switch" id={uniqid()} draggable onDragStart={dragStart}>
-      {position}
-    </div>
-  );
-}
+//   return (
+//     <div className="Switch" id={uniqid()} draggable onDragStart={dragStart}>
+//       {position}
+//     </div>
+//   );
+// }
   
-export default Switch;
+// export default Switch;
