@@ -1,46 +1,16 @@
-import './styles/App.css';
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import uniqid from 'uniqid';
-import Card from './components/Card';
+import { Routes, Route } from "react-router-dom";
+import Pedalboard from "./components/Pedalboard";
+import Pedalbody from "./components/Pedalbody";
+import Menu from "./components/Menu";
 
 function App() {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    if (localStorage.cards) {
-      setCards(JSON.parse(localStorage.getItem("cards")));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cards", JSON.stringify(cards));
-  }, [cards]);
-
-  const addNewPedalboard = () => {
-    const id = uniqid();
-    setCards(cards.concat(id));
-  };
-
-  const deletePedalboard = id => setCards(cards.filter(card => card !== id));
-
   return (
     <div className="App">
-      <button onClick={addNewPedalboard}>Add New Pedalboard</button>
-      <button onClick={() => localStorage.clear()}>Clear localStorage</button>
-      <ul className="card-container">
-        {cards.map(card => {
-          return (
-            <li key={card}>
-              <Card />
-              <Link to={`/pedalboard/${card}`}>
-                <button currentBoard={card}>Open Pedalboard</button>
-              </Link>
-              <button onClick={() => deletePedalboard(card)}>Delete</button>
-            </li>
-          )
-        })}
-      </ul>
+      <Routes>
+        <Route path="/tone-token" element={<Menu />} />
+        <Route path="/pedalboard" element={<Pedalboard />} />
+        <Route path="/pedalbody" element={<Pedalbody />} />
+      </Routes>
     </div>
   );
 }

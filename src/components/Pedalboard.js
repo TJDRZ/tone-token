@@ -7,15 +7,15 @@ import Pedalbody from './Pedalbody';
 function Pedalboard(props) {
   const [pedals, setPedals] = useState([]);
 
-  useEffect(() => {
-    if (localStorage.cards) {
-      setPedals(JSON.parse(localStorage.getItem(`${props.currentBoard}pedals`)));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.cards) {
+  //     setPedals(JSON.parse(localStorage.getItem(`${props.currentBoard}pedals`)));
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem(`${props.currentBoard}pedals`, JSON.stringify(pedals));
-  }, [pedals]);
+  // useEffect(() => {
+  //   localStorage.setItem(`${props.currentBoard}pedals`, JSON.stringify(pedals));
+  // }, [pedals]);
 
   const dragOver = e => {
     e.preventDefault();
