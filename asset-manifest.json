@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/tone-token/static/css/main.b3ec70d2.chunk.css",
-    "main.js": "/tone-token/static/js/main.d0bcbb62.chunk.js",
-    "main.js.map": "/tone-token/static/js/main.d0bcbb62.chunk.js.map",
+    "main.css": "/tone-token/static/css/main.a59f7df1.chunk.css",
+    "main.js": "/tone-token/static/js/main.0917798c.chunk.js",
+    "main.js.map": "/tone-token/static/js/main.0917798c.chunk.js.map",
     "runtime-main.js": "/tone-token/static/js/runtime-main.dfd7509c.js",
     "runtime-main.js.map": "/tone-token/static/js/runtime-main.dfd7509c.js.map",
-    "static/js/2.2a50ae4b.chunk.js": "/tone-token/static/js/2.2a50ae4b.chunk.js",
-    "static/js/2.2a50ae4b.chunk.js.map": "/tone-token/static/js/2.2a50ae4b.chunk.js.map",
+    "static/js/2.0ff647da.chunk.js": "/tone-token/static/js/2.0ff647da.chunk.js",
+    "static/js/2.0ff647da.chunk.js.map": "/tone-token/static/js/2.0ff647da.chunk.js.map",
     "index.html": "/tone-token/index.html",
-    "static/css/main.b3ec70d2.chunk.css.map": "/tone-token/static/css/main.b3ec70d2.chunk.css.map",
-    "static/js/2.2a50ae4b.chunk.js.LICENSE.txt": "/tone-token/static/js/2.2a50ae4b.chunk.js.LICENSE.txt"
+    "static/css/main.a59f7df1.chunk.css.map": "/tone-token/static/css/main.a59f7df1.chunk.css.map",
+    "static/js/2.0ff647da.chunk.js.LICENSE.txt": "/tone-token/static/js/2.0ff647da.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dfd7509c.js",
-    "static/js/2.2a50ae4b.chunk.js",
-    "static/css/main.b3ec70d2.chunk.css",
-    "static/js/main.d0bcbb62.chunk.js"
+    "static/js/2.0ff647da.chunk.js",
+    "static/css/main.a59f7df1.chunk.css",
+    "static/js/main.0917798c.chunk.js"
   ]
 }
