@@ -7,8 +7,30 @@ import Input from "./Input";
 function Menu() {
   const [card, setCard] = useState({ id: uniqid(), name: "newCard" });
   const [cards, setCards] = useState([]);
-  const [nameChange, setNameChage] = useState([]);
+  const [nameChange, setNameChange] = useState([]);
   const isMounted = useRef(false);
+
+  const addNewPedalboard = () => {
+    const id = uniqid();
+    setCard({
+      id: id,
+      name: "newCard",
+    });
+    setCards(cards.concat(card));
+  };
+
+  useEffect(() => {
+    const newCards = cards;
+    newCards.forEach((card) => {
+      if (card.id === nameChange[1]) {
+        card.name = nameChange[0];
+      }
+    });
+    setCards(newCards);
+  }, [cards, nameChange]);
+
+  const deletePedalboard = (target) =>
+    setCards(cards.filter((card) => card.id !== target.id));
 
   useEffect(() => {
     if (isMounted.current) {
@@ -16,30 +38,7 @@ function Menu() {
     } else {
       isMounted.current = true;
     }
-  }, [cards]);
-
-  const addNewPedalboard = () => {
-    const id = uniqid();
-    setCard({
-      id: id,
-      name: "newCard"
-    });
-    setCards(cards.concat(card));
-  };
-
-  useEffect(() => {
-    const newCards = cards;
-    newCards.forEach(card => {
-      if(card.id === nameChange[1]) {
-        card.name = nameChange[0];
-      }
-    });
-    setCards(newCards);
-    console.log(cards);
-  }, [nameChange, cards]);
-
-  const deletePedalboard = target =>
-    setCards(cards.filter(card => card.id !== target.id));
+  }, [cards, nameChange]);
 
   useEffect(() => {
     if (localStorage.cards) {
@@ -55,7 +54,13 @@ function Menu() {
         {cards.map((card) => {
           return (
             <li key={card.id}>
-              <Input type="text" name={"Pedalboard Name"} placeholder="Enter a pedalboard name" lift={setNameChage} id={card.id} />
+              <Input
+                type="text"
+                name={"Pedalboard Name"}
+                placeholder="Enter a pedalboard name"
+                lift={setNameChange}
+                card={card}
+              />
               <Link to={`/pedalboard/${card.id}`}>
                 <button>Open Pedalboard</button>
               </Link>
