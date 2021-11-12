@@ -24,6 +24,7 @@
     background-image: linear-gradient(45deg, #BCB499 0%, #BAA867 25%, #EFD475 100%);
     border-radius: 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
 .inner-lock {
