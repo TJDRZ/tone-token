@@ -10,7 +10,7 @@ function Input(props) {
 
   const submit = () => {
     setTextSet(true);
-    props.lift(text); // Lifts text state up after submit
+    props.lift([text, props.id]); // Lifts text state up after submit
   };
 
   const edit = () => {

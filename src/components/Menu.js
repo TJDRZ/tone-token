@@ -2,18 +2,13 @@ import "../styles/Menu.css";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import uniqid from "uniqid";
-import Card from "./Card";
+import Input from "./Input";
 
 function Menu() {
-  const [card, setCard] = useState({ id: null, name: "" });
+  const [card, setCard] = useState({ id: uniqid(), name: "newCard" });
   const [cards, setCards] = useState([]);
+  const [nameChange, setNameChage] = useState([]);
   const isMounted = useRef(false);
-
-  useEffect(() => {
-    if (localStorage.cards) {
-      setCards(JSON.parse(localStorage.getItem("cards")));
-    }
-  }, []);
 
   useEffect(() => {
     if (isMounted.current) {
@@ -32,8 +27,25 @@ function Menu() {
     setCards(cards.concat(card));
   };
 
-  const deletePedalboard = (keycard) =>
-    setCards(cards.filter((card) => card.id !== keycard.id));
+  useEffect(() => {
+    const newCards = cards;
+    newCards.forEach(card => {
+      if(card.id === nameChange[1]) {
+        card.name = nameChange[0];
+      }
+    });
+    setCards(newCards);
+    console.log(cards);
+  }, [nameChange, cards]);
+
+  const deletePedalboard = target =>
+    setCards(cards.filter(card => card.id !== target.id));
+
+  useEffect(() => {
+    if (localStorage.cards) {
+      setCards(JSON.parse(localStorage.getItem("cards")));
+    }
+  }, []);
 
   return (
     <main className="Menu">
@@ -43,7 +55,7 @@ function Menu() {
         {cards.map((card) => {
           return (
             <li key={card.id}>
-              <Card getName={setCard} />
+              <Input type="text" name={"Pedalboard Name"} placeholder="Enter a pedalboard name" lift={setNameChage} id={card.id} />
               <Link to={`/pedalboard/${card.id}`}>
                 <button>Open Pedalboard</button>
               </Link>
