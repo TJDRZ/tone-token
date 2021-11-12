@@ -40,7 +40,7 @@ function Pedalboard() {
     } else {
       pedalboardMounted.current = true;
     }
-  }, [pedals, nameChange]);
+  }, [pedals, nameChange, pedalboardID]);
 
   // Load localStorage
   useEffect(() => {
