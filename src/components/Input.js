@@ -26,7 +26,7 @@ function Input(props) {
 
   const { type, name, placeholder, pattern } = props;
   return (
-    <div>
+    <div className="Input">
       {textSet ? (
         <div>
           <span>{text} </span>

@@ -48,23 +48,33 @@ function Menu() {
 
   return (
     <main className="Menu">
-      <button onClick={addNewPedalboard}>Add New Pedalboard</button>
-      <button onClick={() => localStorage.clear()}>Clear localStorage</button>
+      <header className="menu-header">
+        <div className="outer-lock"><div className="inner-lock"></div></div>
+        <h1 className="title">Tone Token</h1>
+        <div className="menu-buttons">
+          <button className="new-pedalboard" onClick={addNewPedalboard}>New Pedalboard</button>
+          <button className="clear-storage" onClick={() => localStorage.clear()}>Clear Storage</button>
+        </div>
+      </header>
       <ul className="card-container">
         {cards.map((card) => {
           return (
-            <li key={card.id}>
-              <Input
-                type="text"
-                name={"Pedalboard Name"}
-                placeholder="Enter a pedalboard name"
-                lift={setNameChange}
-                card={card}
-              />
-              <Link to={`/pedalboard/${card.id}`}>
-                <button>Open Pedalboard</button>
-              </Link>
-              <button onClick={() => deletePedalboard(card)}>Delete</button>
+            <li className="card" key={card.id}>
+              <div className="card-name">
+                <Input
+                  type="text"
+                  name={"Pedalboard Name"}
+                  placeholder="Enter a pedalboard name"
+                  lift={setNameChange}
+                  card={card}
+                />
+              </div>
+              <div className="card-buttons">
+                <Link to={`/pedalboard/${card.id}`}>
+                  <button>Open Pedalboard</button>
+                </Link>
+                <button onClick={() => deletePedalboard(card)}>Delete</button>
+              </div>
             </li>
           );
         })}
