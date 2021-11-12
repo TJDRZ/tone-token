@@ -10,6 +10,35 @@ function Menu() {
   const [nameChange, setNameChange] = useState([]);
   const menuMounted = useRef(false);
 
+  // About
+  const info = () => {
+    const about = document.querySelector(".about");
+    const slide = document.querySelector(".slide");
+    const ham = document.querySelector(".ham");
+    const bur = document.querySelector(".bur");
+    const ger = document.querySelector(".ger");
+    const author = document.querySelector(".author");
+    const title = document.querySelector(".title");
+
+    if (about.classList.contains("closed")) {
+      ham.style.transform = "rotate(45deg) translate(22.5%, 100%)";
+      bur.style.opacity = "0";
+      ger.style.transform = "rotate(-45deg) translate(22.5%, -100%)";
+      slide.style.transform = "translateX(100%)";
+      author.style.color = "#fada5e";
+      title.style.color = "#fada5e";
+      about.classList.toggle("closed");
+    } else {
+      ham.style.transform = "rotate(0) translate(0)";
+      bur.style.opacity = "1";
+      ger.style.transform = "rotate(0) translate(0)";
+      slide.style.transform = "translateX(-100%)";
+      author.style.color = "#000";
+      title.style.color = "#000";
+      about.classList.toggle("closed");
+    }
+  };
+
   // Creation
   const addNewPedalboard = () => {
     setCards(cards.concat(card));
@@ -63,6 +92,18 @@ function Menu() {
   return (
     <main className="Menu">
       <header className="header">
+        <div className="about closed" onClick={info}>
+          <div className="ham"></div>
+          <div className="bur"></div>
+          <div className="ger"></div>
+        </div>
+        <div className="slide">
+          <p>-Tired of forgetting where your knobs and switches were set as you change styles of music? How about what pedals you used to achieve that specific sound? ...Tone Token helps solve that problem</p>
+          <p>-Create pedalboards, pedals inside them, and knobs and switches inside them! Click edit to edit the name for anything. Click on the Card Lock Token at the top of the main menu page to hid all 'Delete' buttons to prevent unhappy accidents. Clear storage on the main menu screen to wipe it all and erase the local storage from your browser.</p>
+          <p>-Only saves to your browser's local storage at the moment, so no cross-device accounts available yet. This is a Front-end Development project.</p>
+          <p>-Enjoy!</p>
+          <p><a className="website" href="https://tjdrz.com">https://tjdrz.com</a></p>
+        </div>
         <div className="card-lock">
           <div className="outer-lock" onClick={hideDelete}>
             <div className="inner-lock"></div>
@@ -101,7 +142,9 @@ function Menu() {
                   <button>Open Pedalboard</button>
                 </Link>
                 <button
-                  className={`delete-card ${localStorage.cardLock === "true"  ? "hide-delete" : 0}`}
+                  className={`delete-card ${
+                    localStorage.cardLock === "true" ? "hide-delete" : 0
+                  }`}
                   onClick={() => deletePedalboard(card)}
                 >
                   Delete
