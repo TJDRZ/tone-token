@@ -69,6 +69,7 @@ function Menu() {
           </div>
           <p>Card Lock</p>
         </div>
+        <h2 className="author">TJDRZ's</h2>
         <h1 className="title">Tone Token</h1>
         <div className="header-buttons">
           <button className="new-pedalboard" onClick={addNewPedalboard}>

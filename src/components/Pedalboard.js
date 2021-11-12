@@ -54,7 +54,9 @@ function Pedalboard() {
       <header className="header">
         <Link to="/tone-token">Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalboardID.name}</h1>
-        <button onClick={addNewPedal}>Add New Pedal</button>
+        <div className="header-buttons">
+          <button onClick={addNewPedal}>Add New Pedal</button>
+        </div>
       </header>
       <ul className="card-container">
         {pedals.map((pedal) => {
@@ -74,7 +76,9 @@ function Pedalboard() {
                   <button>Open Pedal</button>
                 </Link>
                 <button
-                  className={`delete-card ${localStorage.cardLock === "true"  ? "hide-delete" : 0}`}
+                  className={`delete-card ${
+                    localStorage.cardLock === "true" ? "hide-delete" : 0
+                  }`}
                   onClick={() => deletePedal(pedal)}
                 >
                   Delete
