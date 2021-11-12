@@ -1,6 +1,11 @@
 input {
-    height: 3rem;
-    text-align: inherit;
-    background-color: #e2cc93;
-    border: inset 5px #888;
+  height: 3rem;
+  text-align: inherit;
+  background-color: #e2cc93;
+  border: inset 5px #888;
+}
+
+input::placeholder {
+  color: #000;
+  font-weight: 600;
 }
