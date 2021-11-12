@@ -1,20 +1,14 @@
-// import '../styles/Switch.css';
-// import uniqid from 'uniqid';
-// import { useState } from "react";
+import "../styles/Flicker.css";
+import Input from "./Input";
 
-// function Switch() {
-//   const [position, setPosition] = useState('mid');
+function Flicker() {
+  return (
+    <div className="Flicker">
+      <Input
+        type="checkbox"
+      />
+    </div>
+  );
+}
 
-//   const dragStart = e => {
-//     e.dataTransfer.effectAllowed = 'move';
-//     e.dataTransfer.setData('switch', e.target.id);
-//   };
-
-//   return (
-//     <div className="Switch" id={uniqid()} draggable onDragStart={dragStart}>
-//       {position}
-//     </div>
-//   );
-// }
-  
-// export default Switch;
+export default Flicker;

@@ -82,13 +82,14 @@ function Pedalbody() {
       <header className="header">
         <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalbodyID.name}</h1>
-        <button onClick={addNewKnob}>Add New Pedal</button>
-        <button onClick={addNewFlicker}>Add New Pedal</button>
+        <button onClick={addNewKnob}>Add New Knob</button>
+        <button onClick={addNewFlicker}>Add New Switch</button>
       </header>
       <div className="case">
         {knobs.map((knob) => {
           return (
-            <div className="knob">
+            <div className="knob" key={knob.id}>
+              <Knob />
               <Input
                 type="text"
                 name={"Knob Name"}
@@ -104,7 +105,8 @@ function Pedalbody() {
         })}
         {flickers.map((flicker) => {
           return (
-            <div className="flicker">
+            <div className="flicker" key={flicker.id}>
+              <Flicker />
               <Input
                 type="text"
                 name={"Switch Name"}
