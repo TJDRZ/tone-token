@@ -5,28 +5,24 @@ import uniqid from "uniqid";
 import Input from "./Input";
 
 function Menu() {
-  const [card, setCard] = useState({ id: uniqid(), name: "newCard" });
+  const [card, setCard] = useState({});
   const [cards, setCards] = useState([]);
   const [nameChange, setNameChange] = useState([]);
   const isMounted = useRef(false);
 
   const addNewPedalboard = () => {
-    const id = uniqid();
-    setCard({
-      id: id,
-      name: "newCard",
-    });
     setCards(cards.concat(card));
   };
 
   useEffect(() => {
     const newCards = cards;
-    newCards.forEach((card) => {
+    newCards.forEach(card => {
       if (card.id === nameChange[1]) {
         card.name = nameChange[0];
       }
     });
     setCards(newCards);
+    setCard({ id: uniqid(), name: "New Pedalboard" })
   }, [cards, nameChange]);
 
   const deletePedalboard = (target) =>
@@ -55,19 +51,19 @@ function Menu() {
 
   return (
     <main className="Menu">
-      <header className="menu-header">
+      <header className="header">
         <div className="card-lock">
           <div className="outer-lock" onClick={hideDelete}><div className="inner-lock"></div></div>
           <p>Card Lock</p>
         </div>
         <h1 className="title">Tone Token</h1>
-        <div className="menu-buttons">
+        <div className="header-buttons">
           <button className="new-pedalboard" onClick={addNewPedalboard}>New Pedalboard</button>
           <button className="clear-storage" onClick={() => localStorage.clear()}>Clear Storage</button>
         </div>
       </header>
       <ul className="card-container">
-        {cards.map((card) => {
+        {cards.map(card => {
           return (
             <li className="card" key={card.id}>
               <div className="card-name">
@@ -80,7 +76,7 @@ function Menu() {
                 />
               </div>
               <div className="card-buttons">
-                <Link to={`/pedalboard/${card.id}`}>
+                <Link to={`/pedalboard/${card.id}/${card.name}`}>
                   <button>Open Pedalboard</button>
                 </Link>
                 <button className="delete-card" onClick={() => deletePedalboard(card)}>Delete</button>

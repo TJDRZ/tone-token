@@ -6,7 +6,6 @@ import Pedalbody from "./Pedalbody";
 
 function Pedalboard() {
   const pedalboardID = useParams();
-  console.log(pedalboardID);
   const [pedals, setPedals] = useState([]);
   const isMounted = useRef(false);
 
@@ -45,9 +44,10 @@ function Pedalboard() {
   // const deletePedal = id => setPedals(pedals.filter(card => card !== id));
 
   return (
-    <div className="Pedalboard-container">
-      <header className="Pedalboard-header">
+    <main className="Pedalboard">
+      <header className="header">
         <Link to="/tone-token">Click Here to Go Back to Cards</Link>
+        <h1 className="title">{pedalboardID.name}</h1>
         <button onClick={addPedal}>Add New Pedal</button>
       </header>
       {/* <div className="Pedalboard" onDragOver={dragOver} onDrop={drop}>
@@ -65,7 +65,7 @@ function Pedalboard() {
           })}
         </ul>
       </div> */}
-    </div>
+    </main>
   );
 }
 

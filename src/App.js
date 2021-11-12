@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/tone-token" element={<Menu />} />
-        <Route path="/pedalboard/:id" element={<Pedalboard />} />
+        <Route path="/pedalboard/:id/:name" element={<Pedalboard />} />
         <Route path="/pedalbody/:id" element={<Pedalbody />} />
       </Routes>
     </div>

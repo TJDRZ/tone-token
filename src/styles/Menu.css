@@ -1,128 +1,79 @@
-.Menu {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: #e2cc93;
-}
-
 .card-lock {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .outer-lock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background-image: linear-gradient(45deg, #BCB499 0%, #BAA867 25%, #EFD475 100%);
-    border-radius: 50%;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-image: linear-gradient(
+    45deg,
+    #bcb499 0%,
+    #baa867 25%,
+    #efd475 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .inner-lock {
-    width: 2rem;
-    height: 2rem;
-    background-image: radial-gradient(#E2CC93 0%, #EFD475 100%);
-    border-radius: 50%;
-    box-shadow: 0 1px 1px rgba(9, 9, 9, 0.25);
+  width: 2rem;
+  height: 2rem;
+  background-image: radial-gradient(#e2cc93 0%, #efd475 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(9, 9, 9, 0.25);
 }
 
 .outer-lock:active {
-    box-shadow: 0.1rem -0.1rem 20px #fada5e;
+  box-shadow: 0.1rem -0.1rem 20px #fada5e;
 }
 
 @media (max-width: 845px) {
-    .card-lock {
-        display: none;
-    }
+  .card-lock {
+    display: none;
+  }
 }
 
-.menu-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: #e2cc93;
-    box-shadow: 0 4px 4px #333;
-}
 
-.title {
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-}
-
-.menu-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-@media (max-width: 615px) {
-    .menu-buttons {
-        flex-direction: column;
-    }
-}
-
-.Menu button {
-    width: 18rem;
-    height: 3rem;
-    font-family: inherit;
-    font-size: 1rem;
-    color: black;
-    background-color: #aaa;
-    border: solid 3px #888;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    transition: 0.5s ease-in;
-}
-
-.Menu button:hover {
-    color: #fff;
-    background-color: #666;
-    border: solid 3px #333;
-}
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    width: 20rem;
-    height: 22rem;
-    font-size: 2rem;
-    background-color: #888;
-    border-radius: 1rem;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 20rem;
+  height: 22rem;
+  font-size: 2rem;
+  background-color: #888;
+  border-radius: 1rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.75);
 }
 
-.Menu .Input > div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+.Menu .Input > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .hide-delete {
-    display: none;
+  display: none;
 }
