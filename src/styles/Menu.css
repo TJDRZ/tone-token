@@ -39,7 +39,7 @@
 
 @media (max-width: 845px) {
   .card-lock {
-    display: none;
+    position: static;
   }
 }
 

@@ -27,6 +27,7 @@
   padding: 1rem;
   background-color: #e2cc93;
   box-shadow: 0 4px 4px #333;
+  z-index: 1;
 }
 
 .title {

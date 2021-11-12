@@ -82,8 +82,10 @@ function Pedalbody() {
         <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalbodyID.name}</h1>
         <p>Under Construction: knobs and switches incomplete</p>
-        <button onClick={addNewKnob}>Add New Knob</button>
-        <button onClick={addNewFlicker}>Add New Switch</button>
+        <div className="header-buttons">
+          <button onClick={addNewKnob}>Add New Knob</button>
+          <button onClick={addNewFlicker}>Add New Switch</button>
+        </div>
       </header>
       <ul className="card-container">
         {knobs.map((knob) => {
@@ -97,7 +99,12 @@ function Pedalbody() {
                 lift={setKnobNameChange}
                 card={knob}
               />
-              <button className="delete-card" onClick={() => deleteKnob(knob)}>
+              <button
+                className={`delete-card ${
+                  localStorage.cardLock === "true" ? "hide-delete" : 0
+                }`}
+                onClick={() => deleteKnob(knob)}
+              >
                 Delete
               </button>
             </li>
@@ -115,7 +122,9 @@ function Pedalbody() {
                 card={flicker}
               />
               <button
-                className="delete-card"
+                className={`delete-card ${
+                  localStorage.cardLock === "true" ? "hide-delete" : 0
+                }`}
                 onClick={() => deleteFlicker(flicker)}
               >
                 Delete

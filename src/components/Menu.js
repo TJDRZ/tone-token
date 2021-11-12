@@ -37,6 +37,11 @@ function Menu() {
     buttons.forEach((button) => {
       button.classList.toggle("hide-delete");
     });
+    if (buttons[0] && buttons[0].classList.contains("hide-delete")) {
+      localStorage.setItem("cardLock", "true");
+    } else {
+      localStorage.setItem("cardLock", "false");
+    }
   };
 
   // Set localStorage
@@ -95,7 +100,7 @@ function Menu() {
                   <button>Open Pedalboard</button>
                 </Link>
                 <button
-                  className="delete-card"
+                  className={`delete-card ${localStorage.cardLock === "true"  ? "hide-delete" : 0}`}
                   onClick={() => deletePedalboard(card)}
                 >
                   Delete

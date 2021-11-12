@@ -74,7 +74,7 @@ function Pedalboard() {
                   <button>Open Pedal</button>
                 </Link>
                 <button
-                  className="delete-card"
+                  className={`delete-card ${localStorage.cardLock === "true"  ? "hide-delete" : 0}`}
                   onClick={() => deletePedal(pedal)}
                 >
                   Delete
