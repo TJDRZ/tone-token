@@ -17,13 +17,8 @@ function Pedalbody() {
   const pedalbodyMounted = useRef(false);
 
   // Creation
-  const addNewKnob = () => {
-    setKnobs(knobs.concat(knob));
-  };
-
-  const addNewFlicker = () => {
-    setFlickers(flickers.concat(flicker));
-  };
+  const addNewKnob = () => setKnobs(knobs.concat(knob));
+  const addNewFlicker = () => setFlickers(flickers.concat(flicker));
 
   // Name Change
   useEffect(() => {
@@ -35,7 +30,7 @@ function Pedalbody() {
       }
     });
     setKnobs(newKnobs);
-    setKnob({ id: uniqid(), name: "New Knob" });
+    setKnob({ id: uniqid(), name: "New Knob", status: null });
 
     //Flicker
     const newFlickers = flickers;
@@ -45,14 +40,16 @@ function Pedalbody() {
       }
     });
     setFlickers(newFlickers);
-    setFlicker({ id: uniqid(), name: "New Switch" });
+    setFlicker({ id: uniqid(), name: "New Switch", status: false });
   }, [knobs, flickers, knobNameChange, flickerNameChange]);
 
   // Deletion
-  const deleteKnob = (target) =>
-    setKnob(knobs.filter((knob) => knob.id !== target.id));
-  const deleteFlicker = (target) =>
-    setFlicker(flickers.filter((flicker) => flicker.id !== target.id));
+  const deleteKnob = (target) => {
+    setKnobs(knobs.filter((knob) => knob.id !== target.id));
+  };
+  const deleteFlicker = (target) => {
+    setFlickers(flickers.filter((flicker) => flicker.id !== target.id));
+  };
 
   // Set localStorage
   useEffect(() => {
@@ -69,8 +66,10 @@ function Pedalbody() {
 
   // Load localStorage
   useEffect(() => {
-    if (localStorage.getItem(`${pedalbodyID.id}`) !== null) {
+    if (localStorage.getItem(`${pedalbodyID.id}knobs`) !== null) {
       setKnobs(JSON.parse(localStorage.getItem(`${pedalbodyID.id}knobs`)));
+    }
+    if (localStorage.getItem(`${pedalbodyID.id}flickers`) !== null) {
       setFlickers(
         JSON.parse(localStorage.getItem(`${pedalbodyID.id}flickers`))
       );
@@ -82,13 +81,14 @@ function Pedalbody() {
       <header className="header">
         <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalbodyID.name}</h1>
+        <p>Under Construction: knobs and switches incomplete</p>
         <button onClick={addNewKnob}>Add New Knob</button>
         <button onClick={addNewFlicker}>Add New Switch</button>
       </header>
-      <div className="case">
+      <ul className="card-container">
         {knobs.map((knob) => {
           return (
-            <div className="knob" key={knob.id}>
+            <li className="card" key={knob.id}>
               <Knob />
               <Input
                 type="text"
@@ -97,15 +97,15 @@ function Pedalbody() {
                 lift={setKnobNameChange}
                 card={knob}
               />
-              <button className="delete-knob" onClick={() => deleteKnob(knob)}>
+              <button className="delete-card" onClick={() => deleteKnob(knob)}>
                 Delete
               </button>
-            </div>
+            </li>
           );
         })}
         {flickers.map((flicker) => {
           return (
-            <div className="flicker" key={flicker.id}>
+            <li className="card" key={flicker.id}>
               <Flicker />
               <Input
                 type="text"
@@ -115,15 +115,15 @@ function Pedalbody() {
                 card={flicker}
               />
               <button
-                className="delete-flicker"
+                className="delete-card"
                 onClick={() => deleteFlicker(flicker)}
               >
                 Delete
               </button>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </main>
   );
 }

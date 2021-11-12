@@ -31,7 +31,7 @@ function Pedalboard() {
 
   // Deletion
   const deletePedal = (target) =>
-    setPedal(pedals.filter((pedal) => pedal.id !== target.id));
+    setPedals(pedals.filter((pedal) => pedal.id !== target.id));
 
   // Set localStorage
   useEffect(() => {

@@ -1,7 +1,29 @@
 .Knob {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    border: none;
-    background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: knob-construction 6s infinite;
+}
+
+.notch {
+  height: 1.5rem;
+  width: 0.2rem;
+  background-color: black;
+}
+
+.Knob:active {
+  /* Rotate on click? */
+}
+
+@keyframes knob-construction {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }

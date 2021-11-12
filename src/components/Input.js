@@ -5,10 +5,8 @@ function Input(props) {
   const [textSet, setTextSet] = useState(false);
 
   useEffect(() => {
-    if (props.card) {
-      setText(props.card.name);
-      setTextSet(true);
-    }
+    setText(props.card.name);
+    setTextSet(true);
   }, []);
 
   const update = (e) => {
