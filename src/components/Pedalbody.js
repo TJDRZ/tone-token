@@ -1,32 +1,44 @@
 import "../styles/Pedalbody.css";
+import { useState, useEffect, useRef } from "react";
+import { Link, useParams } from "react-router-dom";
+import uniqid from "uniqid";
+import Input from "./Input";
+import Knob from "./Knob";
+import Flicker from "./Flicker";
 
 function Pedalbody() {
-  const dragStart = e => {
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('pedalbody', e.target.id);
-  };
+  const pedalbodyID = useParams();
+  const [knob, setKnob] = useState({});
+  const [knobs, setKnobs] = useState([]);
+  const [flicker, setFlicker] = useState({}); // Switch is a reserved word
+  const [flickers, setFlickers] = useState([]);
+  const [nameChange, setNameChange] = useState([]);
+  const pedalboardMounted = useRef(false);
 
-  const dragOver = e => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-  };
+  // Creation
+  
 
-  const drop = e => {
-    e.preventDefault();
-    if (e.dataTransfer.getData('knob')) {
-      const data = e.dataTransfer.getData('knob');
-      e.target.appendChild(document.getElementById(data));
-    }
-    else if (e.dataTransfer.getData('switch')) {
-      const data = e.dataTransfer.getData('switch');
-      e.target.appendChild(document.getElementById(data));
-    }
-  };
+  // Name Change
+  
+
+  // Deletion
+  
+
+  // Set localStorage
+  
+
+  // Load localStorage
+  
 
   return (
-    <div className="Pedalbody" draggable onDragStart={dragStart} onDragOver={dragOver} onDrop={drop}>
-    </div>
+    <main className="Pedalbody">
+      <header className="header">
+        <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
+        <h1 className="title">{pedalbodyID.name}</h1>
+      </header>
+    </main>
   );
 }
 
 export default Pedalbody;
+
