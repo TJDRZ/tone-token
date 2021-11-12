@@ -61,11 +61,18 @@
 .title {
     font-size: 3rem;
     font-weight: 300;
+    text-align: center;
 }
 
 .menu-buttons {
     display: flex;
     gap: 1rem;
+}
+
+@media (max-width: 615px) {
+    .menu-buttons {
+        flex-direction: column;
+    }
 }
 
 .Menu button {

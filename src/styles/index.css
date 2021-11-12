@@ -2,6 +2,12 @@
   max-width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  line-height: 1.5rem;
+  line-height: 3rem;
   font-family: 'Spectral SC', serif;
+}
+
+@media (max-width: 333px) {
+  :root {
+    font-size: 12px;
+  }
 }

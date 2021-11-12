@@ -39,6 +39,7 @@ function Input(props) {
             type={type}
             name={name}
             required
+            maxLength="10"
             placeholder={placeholder}
             pattern={pattern}
             onChange={update}
