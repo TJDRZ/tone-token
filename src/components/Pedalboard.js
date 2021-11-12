@@ -36,7 +36,7 @@ function Pedalboard() {
   // Set localStorage
   useEffect(() => {
     if (pedalboardMounted.current) {
-      localStorage.setItem("pedals", JSON.stringify(pedals));
+      localStorage.setItem(`${pedalboardID.id}`, JSON.stringify(pedals));
     } else {
       pedalboardMounted.current = true;
     }
@@ -44,8 +44,8 @@ function Pedalboard() {
 
   // Load localStorage
   useEffect(() => {
-    if (localStorage.pedals) {
-      setPedals(JSON.parse(localStorage.getItem("pedals")));
+    if (localStorage.getItem(`${pedalboardID.id}`) !== null) {
+      setPedals(JSON.parse(localStorage.getItem(`${pedalboardID.id}`)));
     }
   }, []);
 
