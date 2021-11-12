@@ -32,6 +32,13 @@ function Menu() {
   const deletePedalboard = (target) =>
     setCards(cards.filter((card) => card.id !== target.id));
 
+  const hideDelete = () => {
+    const buttons = document.querySelectorAll('.delete-card');
+    buttons.forEach(button => {
+      button.classList.toggle('hide-delete');
+    });
+  };
+
   useEffect(() => {
     if (isMounted.current) {
       localStorage.setItem("cards", JSON.stringify(cards));
@@ -49,7 +56,10 @@ function Menu() {
   return (
     <main className="Menu">
       <header className="menu-header">
-        <div className="outer-lock"><div className="inner-lock"></div></div>
+        <div className="card-lock">
+          <div className="outer-lock" onClick={hideDelete}><div className="inner-lock"></div></div>
+          <p>Card Lock</p>
+        </div>
         <h1 className="title">Tone Token</h1>
         <div className="menu-buttons">
           <button className="new-pedalboard" onClick={addNewPedalboard}>New Pedalboard</button>
@@ -73,7 +83,7 @@ function Menu() {
                 <Link to={`/pedalboard/${card.id}`}>
                   <button>Open Pedalboard</button>
                 </Link>
-                <button onClick={() => deletePedalboard(card)}>Delete</button>
+                <button className="delete-card" onClick={() => deletePedalboard(card)}>Delete</button>
               </div>
             </li>
           );

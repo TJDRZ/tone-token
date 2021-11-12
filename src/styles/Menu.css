@@ -5,10 +5,17 @@
     background-color: #e2cc93;
 }
 
-.outer-lock {
+.card-lock {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.outer-lock {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +32,16 @@
     background-image: radial-gradient(#E2CC93 0%, #EFD475 100%);
     border-radius: 50%;
     box-shadow: 0 1px 1px rgba(9, 9, 9, 0.25);
+}
+
+.outer-lock:active {
+    box-shadow: 0.1rem -0.1rem 20px #fada5e;
+}
+
+@media (max-width: 845px) {
+    .card-lock {
+        display: none;
+    }
 }
 
 .menu-header {
@@ -95,4 +112,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+}
+
+.hide-delete {
+    display: none;
 }
