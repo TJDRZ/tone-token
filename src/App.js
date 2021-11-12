@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/tone-token" element={<Menu />} />
         <Route path="/pedalboard/:id/:name" element={<Pedalboard />} />
-        <Route path="/pedalbody/:id" element={<Pedalbody />} />
+        <Route path="/pedalbody/:id/:name" element={<Pedalbody />} />
       </Routes>
     </div>
   );
