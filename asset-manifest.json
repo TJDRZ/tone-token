@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tone-token/static/css/main.f6ea7ceb.chunk.css",
-    "main.js": "/tone-token/static/js/main.c59bea64.chunk.js",
-    "main.js.map": "/tone-token/static/js/main.c59bea64.chunk.js.map",
+    "main.js": "/tone-token/static/js/main.edb65055.chunk.js",
+    "main.js.map": "/tone-token/static/js/main.edb65055.chunk.js.map",
     "runtime-main.js": "/tone-token/static/js/runtime-main.dfd7509c.js",
     "runtime-main.js.map": "/tone-token/static/js/runtime-main.dfd7509c.js.map",
     "static/js/2.0ff647da.chunk.js": "/tone-token/static/js/2.0ff647da.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.dfd7509c.js",
     "static/js/2.0ff647da.chunk.js",
     "static/css/main.f6ea7ceb.chunk.css",
-    "static/js/main.c59bea64.chunk.js"
+    "static/js/main.edb65055.chunk.js"
   ]
 }
