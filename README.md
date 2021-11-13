@@ -18,6 +18,7 @@ Usage:
 - Edit on card to bring up name change input / submit to submit name change of card
 - Clear Storage button on main page to clear Local Storage from browser
 
+What's to come:
 - Knobs and Switches under construction, still in idea process
 - Probably will change to Sass/SCSS after full foundation completed and deployed
 
