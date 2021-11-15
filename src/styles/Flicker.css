@@ -1,29 +1,37 @@
 .Flicker {
-  width: 3rem;
-  height: 1rem;
-  background-image: linear-gradient(#fff, #000);
-  border-radius: 0.5rem;
-  animation: flicker-construction 3s infinite;
+  position: relative;
+  width: 2rem;
+  height: 6rem;
+  border: solid 2px #fada5e;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-.Flicker:active {
-  /* Rotate on click? */
+.flicker-dot {
+  content: "";
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0;
 }
 
-@keyframes flicker-construction {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  25% {
-    transform: rotateZ(-45deg);
-  }
-  50% {
-    transform: rotateZ(-90deg);
-  }
-  75% {
-    transform: rotateZ(-45deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
-  }
+.flicker-position-one {
+  top: 10%;
+  left: 30%;
+}
+
+.flicker-position-two {
+  top: 45%;
+  left: 30%;
+}
+
+.flicker-position-three {
+  bottom: 10%;
+  left: 30%;
+}
+
+.active-flicker-position {
+  opacity: 100;
 }

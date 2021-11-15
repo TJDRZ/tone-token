@@ -89,6 +89,12 @@ function Menu() {
     }
   }, []);
 
+  // Clear localStorage
+  const clearStorage = () => {
+    localStorage.clear();
+    setCards([]);
+  };
+
   return (
     <main className="Menu">
       <header className="header">
@@ -117,7 +123,7 @@ function Menu() {
           </button>
           <button
             className="clear-storage"
-            onClick={() => localStorage.clear()}
+            onClick={clearStorage}
           >
             Clear Storage
           </button>
