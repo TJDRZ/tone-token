@@ -155,7 +155,8 @@ function Menu() {
         </div>
         <div className="warning">
           <form onSubmit={clearStorage}>
-            <p>Are you sure? (Everything saved will be lost!)</p>
+            <p>Are you sure?</p>
+            <p>(Everything saved will be lost!)</p>
             <fieldset>
               <label htmlFor="warning">
                 <input name="warning" type="radio" />

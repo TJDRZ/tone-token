@@ -81,7 +81,7 @@ function Pedalbody() {
       <header className="header">
         <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalbodyID.name}</h1>
-        <p>Under Construction: knobs and switches incomplete</p>
+        <p>Under Construction: knobs incomplete</p>
         <div className="header-buttons">
           <button onClick={addNewKnob}>Add New Knob</button>
           <button onClick={addNewFlicker}>Add New Switch</button>
