@@ -90,9 +90,18 @@ function Menu() {
   }, []);
 
   // Clear localStorage
-  const clearStorage = () => {
-    localStorage.clear();
-    setCards([]);
+  const warning = () => {
+    document.querySelector(".warning").style.display = "block";
+  };
+
+  const clearStorage = (e) => {
+    console.log(e)
+    if (e.target.elements[1].checked) {
+      localStorage.clear();
+      setCards([]);
+    }
+    e.preventDefault();
+    document.querySelector(".warning").style.display = "none";
   };
 
   return (
@@ -104,10 +113,29 @@ function Menu() {
           <div className="ger"></div>
         </div>
         <div className="slide">
-          <p>-Tired of forgetting where your knobs and switches were set as you change styles of music? How about what pedals you used to achieve that specific sound? ...Tone Token helps solve that problem.</p>
-          <p>-Create pedalboards with pedals inside them, and knobs and switches inside them too! Click edit to customize the name of anything. Click on the Card Lock Token at the top of the main menu page to hide all 'Delete' buttons to prevent unhappy accidents. Clear storage on the main menu screen will wipe it all and erase the local storage from your browser.</p>
-          <p>-Only saves to your browser's local storage at the moment, so no cross-device accounts available yet. This is a Front-end Development project.</p>
-          <p><a className="website" href="https://tjdrz.com">https://tjdrz.com</a></p>
+          <p>
+            -Tired of forgetting where your knobs and switches were set as you
+            change styles of music? How about what pedals you used to achieve
+            that specific sound? ...Tone Token helps solve that problem.
+          </p>
+          <p>
+            -Create pedalboards with pedals inside them, and knobs and switches
+            inside them too! Click edit to customize the name of anything. Click
+            on the Card Lock Token at the top of the main menu page to hide all
+            'Delete' buttons to prevent unhappy accidents. Clear storage on the
+            main menu screen will wipe it all and erase the local storage from
+            your browser.
+          </p>
+          <p>
+            -Only saves to your browser's local storage at the moment, so no
+            cross-device accounts available yet. This is a Front-end Development
+            project.
+          </p>
+          <p>
+            <a className="website" href="https://tjdrz.com">
+              https://tjdrz.com
+            </a>
+          </p>
         </div>
         <div className="card-lock">
           <div className="outer-lock" onClick={hideDelete}>
@@ -121,12 +149,25 @@ function Menu() {
           <button className="new-pedalboard" onClick={addNewPedalboard}>
             New Pedalboard
           </button>
-          <button
-            className="clear-storage"
-            onClick={clearStorage}
-          >
+          <button className="clear-storage" onClick={warning}>
             Clear Storage
           </button>
+        </div>
+        <div className="warning">
+          <form onSubmit={clearStorage}>
+            <p>Are you sure? (Everything saved will be lost!)</p>
+            <fieldset>
+              <label htmlFor="warning">
+                <input name="warning" type="radio" />
+                Yes
+              </label>
+              <label htmlFor="warning">
+                <input name="warning" type="radio" />
+                No
+              </label>
+            </fieldset>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </header>
       <ul className="card-container">
