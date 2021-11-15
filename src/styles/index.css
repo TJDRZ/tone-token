@@ -44,14 +44,14 @@
 }
 
 .author {
-  transition: color 2s ease-in-out, background-color 2s ease-in-out;
+  transition: color 2s ease-in-out;
   z-index: 1;
 }
 
 .title {
   font-size: 3rem;
   font-weight: 300;
-  transition: color 2s ease-in-out, background-color 2s ease-in-out;
+  transition: color 2s ease-in-out;
   z-index: 1;
 }
 
