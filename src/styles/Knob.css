@@ -1,12 +1,12 @@
 .Knob {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   width: 3rem;
   height: 3rem;
   background-color: #fff;
   border-radius: 50%;
-  animation: knob-construction 6s infinite;
+  animation: knob-animated 6s infinite;
 }
 
 .notch {
@@ -15,11 +15,7 @@
   background-color: black;
 }
 
-.Knob:active {
-  /* Rotate on click? */
-}
-
-@keyframes knob-construction {
+@keyframes knob-animated {
   from {
     transform: rotateZ(0);
   }

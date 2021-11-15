@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import uniqid from "uniqid";
 import Input from "./Input";
-import Pedalbody from "./Pedalbody";
 
 function Pedalboard() {
   const pedalboardID = useParams();

@@ -113,7 +113,7 @@ function Pedalbody() {
         {flickers.map((flicker) => {
           return (
             <li className="card" key={flicker.id}>
-              <Flicker />
+              <Flicker id={flicker.id} />
               <Input
                 type="text"
                 name={"Switch Name"}

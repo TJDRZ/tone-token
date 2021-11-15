@@ -93,6 +93,23 @@
   }
 }
 
+/* Clear Storage Warning */
+.warning {
+  display: none;
+  padding: 1rem;
+  background-color: #ccc;
+}
+
+.warning label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warning label:first-child {
+  color: red;
+}
+
 /* Cards */
 .card-container {
   display: flex;
