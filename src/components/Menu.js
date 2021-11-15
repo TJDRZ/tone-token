@@ -95,7 +95,7 @@ function Menu() {
   };
 
   const clearStorage = (e) => {
-    console.log(e)
+    console.log(e);
     if (e.target.elements[1].checked) {
       localStorage.clear();
       setCards([]);
@@ -113,29 +113,47 @@ function Menu() {
           <div className="ger"></div>
         </div>
         <div className="slide">
-          <p>
-            -Tired of forgetting where your knobs and switches were set as you
-            change styles of music? How about what pedals you used to achieve
-            that specific sound? ...Tone Token helps solve that problem.
-          </p>
-          <p>
-            -Create pedalboards with pedals inside them, and knobs and switches
-            inside them too! Click edit to customize the name of anything. Click
-            on the Card Lock Token at the top of the main menu page to hide all
-            'Delete' buttons to prevent unhappy accidents. Clear storage on the
-            main menu screen will wipe it all and erase the local storage from
-            your browser.
-          </p>
-          <p>
-            -Only saves to your browser's local storage at the moment, so no
-            cross-device accounts available yet. This is a Front-end Development
-            project.
-          </p>
-          <p>
-            <a className="website" href="https://tjdrz.com">
-              https://tjdrz.com
-            </a>
-          </p>
+          <ul>
+            <li>
+              <p>
+                Tired of forgetting where your knobs and switches were set as
+                you change styles of music? How about what pedals you used to
+                achieve that specific sound? ...Tone Token helps solve that
+                problem.
+              </p>
+            </li>
+            <li>
+              <p>Usage:</p>
+              <p>
+                - Create pedalboards, with pedals inside them...and knobs and
+                switches inside those too!
+              </p>
+              <p>- Click edit to customize the name of anything.</p>
+              <p>- Click on the switch icons to toggle 3 different positions.</p>
+              <p>
+                - Click on the Card Lock Token at the top of the main menu page
+                to hide all 'Delete' buttons to prevent unhappy accidents.
+              </p>
+              <p>
+                - Clear storage on the main menu page will wipe it all and
+                erase the local storage from your browser.
+              </p>
+            </li>
+            <li>
+              <p>
+                Only saves to your browser's local storage at the moment, so no
+                cross-device accounts available yet. This is a Front-end
+                Development project.
+              </p>
+            </li>
+            <li>
+              <p>
+                <a className="website" href="https://tjdrz.com">
+                  https://tjdrz.com
+                </a>
+              </p>
+            </li>
+          </ul>
         </div>
         <div className="card-lock">
           <div className="outer-lock" onClick={hideDelete}>

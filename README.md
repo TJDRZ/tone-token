@@ -14,12 +14,13 @@ Why?:
 Usage:
 - Hamburger menu on main page for about section
 - Card lock token on top right during desktop / top middle on smaller screens to toggle display of delete buttons on cards
+- Clear Storage button on main page to clear Local Storage from browser, will prompt with warning
 - New buttons to create new cards (pedalboards/pedals/knobs/switches)
 - Edit on card to bring up name change input / submit to submit name change of card
-- Clear Storage button on main page to clear Local Storage from browser
+- Switch icon clickable to toggle 3 different positions
 
 What's to come:
-- Knobs and Switches under construction, still in idea process
+- Knobs under construction, still in idea process
 - Probably will change to Sass/SCSS after full foundation completed and deployed
 
 Enjoy!

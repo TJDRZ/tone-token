@@ -37,10 +37,14 @@
   transition-duration: 2s;
 }
 
-.slide > p {
+.slide p {
   position: relative;
   top: 15rem;
   color: #ddd;
+}
+
+.slide li:first-child p, li:nth-last-child(2) p {
+  color: #baa867;
 }
 
 .website {
