@@ -18,9 +18,6 @@ Usage:
 - New buttons to create new cards (pedalboards/pedals/knobs/switches)
 - Edit on card to bring up name change input / submit to submit name change of card
 - Switch icon clickable to toggle 3 different positions
-
-What's to come:
-- Knobs under construction, still in idea process
-- Probably will change to Sass/SCSS after full foundation completed and deployed
+- Knob can be clicked on desired spot and/or clicked and dragged to achieve desired position
 
 Enjoy!

@@ -1,4 +1,3 @@
-import "../styles/Pedalboard.css";
 import { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import uniqid from "uniqid";

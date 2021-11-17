@@ -129,14 +129,19 @@ function Menu() {
                 switches inside those too!
               </p>
               <p>- Click edit to customize the name of anything.</p>
-              <p>- Click on the switch icons to toggle 3 different positions.</p>
+              <p>
+                - Click on the switch icons to toggle 3 different positions.
+              </p>
+              <p>
+                - Click on the desired location and/or click and drag the knob icons.
+              </p>
               <p>
                 - Click on the Card Lock Token at the top of the main menu page
                 to hide all 'Delete' buttons to prevent unhappy accidents.
               </p>
               <p>
-                - Clear storage on the main menu page will wipe it all and
-                erase the local storage from your browser.
+                - Clear storage on the main menu page will wipe it all and erase
+                the local storage from your browser.
               </p>
             </li>
             <li>

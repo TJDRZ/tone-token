@@ -1,4 +1,3 @@
-import "../styles/Pedalbody.css";
 import { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import uniqid from "uniqid";
@@ -81,7 +80,6 @@ function Pedalbody() {
       <header className="header">
         <Link to={"/tone-token"}>Click Here to Go Back to Pedalboards</Link>
         <h1 className="title">{pedalbodyID.name}</h1>
-        <p>Under Construction: knobs incomplete</p>
         <div className="header-buttons">
           <button onClick={addNewKnob}>Add New Knob</button>
           <button onClick={addNewFlicker}>Add New Switch</button>
@@ -91,7 +89,7 @@ function Pedalbody() {
         {knobs.map((knob) => {
           return (
             <li className="card" key={knob.id}>
-              <Knob />
+              <Knob id={knob.id} />
               <Input
                 type="text"
                 name={"Knob Name"}

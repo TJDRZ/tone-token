@@ -57,7 +57,7 @@ function Flicker(props) {
       setActivePosition("flicker-position-one");
       children[0].classList.toggle("active-flicker-position");
     }
-  }, [props.id]);
+  }, []);
 
   return (
     <div className="Flicker" ref={parent} onClick={flickerPosition}>
