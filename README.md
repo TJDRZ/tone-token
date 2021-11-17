@@ -1,7 +1,7 @@
 # Tone Token - Pedalboard settings saver
 ## TJDRZ
 
-Created using create-react-app and react-router-dom(v6!)
+Created using create-react-app, react-router-dom(v6!), and react-dial-knob
 Frontend Development project with Local Storage saving
 
 Who is this useful for?:
