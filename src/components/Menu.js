@@ -10,32 +10,33 @@ function Menu() {
   const [nameChange, setNameChange] = useState([]);
   const menuMounted = useRef(false);
 
-  // About
-  const info = () => {
-    const about = document.querySelector(".about");
-    const slide = document.querySelector(".slide");
-    const ham = document.querySelector(".ham");
-    const bur = document.querySelector(".bur");
-    const ger = document.querySelector(".ger");
-    const author = document.querySelector(".author");
-    const title = document.querySelector(".title");
+  // About menu DOM refs
+  const about = useRef(null);
+  const slide = useRef(null);
+  const ham = useRef(null);
+  const bur = useRef(null);
+  const ger = useRef(null);
+  const author = useRef(null);
+  const title = useRef(null);
 
-    if (about.classList.contains("closed")) {
-      ham.style.transform = "rotate(45deg) translate(22.5%, 100%)";
-      bur.style.opacity = "0";
-      ger.style.transform = "rotate(-45deg) translate(22.5%, -100%)";
-      slide.style.transform = "translateX(100%)";
-      author.style.color = "#fada5e";
-      title.style.color = "#fada5e";
-      about.classList.toggle("closed");
+  // About menu onClick
+  const info = () => {
+    if (about.current.classList.contains("closed")) {
+      ham.current.style.transform = "rotate(45deg) translate(22.5%, 100%)";
+      bur.current.style.opacity = "0";
+      ger.current.style.transform = "rotate(-45deg) translate(22.5%, -100%)";
+      slide.current.style.transform = "translateX(100%)";
+      author.current.style.color = "#fada5e";
+      title.current.style.color = "#fada5e";
+      about.current.classList.toggle("closed");
     } else {
-      ham.style.transform = "rotate(0) translate(0)";
-      bur.style.opacity = "1";
-      ger.style.transform = "rotate(0) translate(0)";
-      slide.style.transform = "translateX(-100%)";
-      author.style.color = "#000";
-      title.style.color = "#000";
-      about.classList.toggle("closed");
+      ham.current.style.transform = "rotate(0) translate(0)";
+      bur.current.style.opacity = "1";
+      ger.current.style.transform = "rotate(0) translate(0)";
+      slide.current.style.transform = "translateX(-100%)";
+      author.current.style.color = "#000";
+      title.current.style.color = "#000";
+      about.current.classList.toggle("closed");
     }
   };
 
@@ -107,12 +108,12 @@ function Menu() {
   return (
     <main className="Menu">
       <header className="header">
-        <div className="about closed" onClick={info}>
-          <div className="ham"></div>
-          <div className="bur"></div>
-          <div className="ger"></div>
+        <div ref={about} className="about closed" onClick={info}>
+          <div ref={ham}></div>
+          <div ref={bur}></div>
+          <div ref={ger}></div>
         </div>
-        <div className="slide">
+        <div ref={slide} className="slide">
           <ul>
             <li>
               <p>
@@ -166,8 +167,8 @@ function Menu() {
           </div>
           <p>Card Lock</p>
         </div>
-        <h2 className="author">TJDRZ's</h2>
-        <h1 className="title">Tone Token</h1>
+        <h2 ref={author} className="author">TJDRZ's</h2>
+        <h1 ref={title} className="title">Tone Token</h1>
         <div className="header-buttons">
           <button className="new-pedalboard" onClick={addNewPedalboard}>
             New Pedalboard
