@@ -18,6 +18,7 @@ function Menu() {
   const ger = useRef(null);
   const author = useRef(null);
   const title = useRef(null);
+  const warningRef = useRef(null);
 
   // About menu onClick
   const info = () => {
@@ -92,7 +93,7 @@ function Menu() {
 
   // Clear localStorage
   const warning = () => {
-    document.querySelector(".warning").style.display = "block";
+    warningRef.current.style.display = "block";
   };
 
   const clearStorage = (e) => {
@@ -102,7 +103,7 @@ function Menu() {
       setCards([]);
     }
     e.preventDefault();
-    document.querySelector(".warning").style.display = "none";
+    warningRef.current.style.display = "none";
   };
 
   return (
@@ -177,7 +178,7 @@ function Menu() {
             Clear Storage
           </button>
         </div>
-        <div className="warning">
+        <div ref={warningRef} className="warning">
           <form onSubmit={clearStorage}>
             <p>Are you sure?</p>
             <p>(Everything saved will be lost!)</p>
